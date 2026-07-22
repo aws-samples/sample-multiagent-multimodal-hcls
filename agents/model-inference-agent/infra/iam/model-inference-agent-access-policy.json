@@ -1,0 +1,32 @@
+{
+  "Version": "2012-10-17",
+  "Id": "ModelInferenceAgentAccessPolicy",
+  "Statement": [
+    {
+      "Sid": "InvokeSageMakerEndpointsOnly",
+      "Effect": "Allow",
+      "Action": "sagemaker:InvokeEndpoint",
+      "Resource": [
+        "arn:aws:sagemaker:us-west-2:123456789012:endpoint/healthcare-autogluon",
+        "arn:aws:sagemaker:us-west-2:123456789012:endpoint/healthcare-tabpfn"
+      ]
+    },
+    {
+      "Sid": "GetSyntheaPreprocessingObjects",
+      "Effect": "Allow",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::synthea-coherent-data-multimodal/preprocessing/*"
+    },
+    {
+      "Sid": "ListSyntheaPreprocessingPrefix",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::synthea-coherent-data-multimodal",
+      "Condition": {
+        "StringLike": {
+          "s3:prefix": ["preprocessing/*"]
+        }
+      }
+    }
+  ]
+}
