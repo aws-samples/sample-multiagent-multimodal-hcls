@@ -8,7 +8,7 @@ healthcare and life sciences (HCLS) use cases, built on
 
 An orchestrator agent routes user requests to specialist agents that query
 biomedical data sources (PubMed, ClinicalTrials.gov, AWS HealthLake,
-HealthImaging, HealthOmics) and invoke healthcare ML model endpoints.
+HealthImaging, HealthOmics) and invoke AI model endpoints for predictive analytics.
 
 > **Note**: This is sample/educational code. It is not intended for production
 > use without further security, reliability, and compliance review.
@@ -60,7 +60,7 @@ pip install -r requirements.txt
 
 ## Running
 
-Deploy the agents/MCP servers to AgentCore using the `deploy*.py` scripts, then
+Deploy the agents/MCP servers to Amazon Bedrock AgentCore using the `deploy*.py` scripts, then
 start the frontend:
 
 ```bash
