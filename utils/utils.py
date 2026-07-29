@@ -626,11 +626,12 @@ def setup_cognito_user_pool(
 
 def setup_env(args: Dict[str, Any]) -> bool:
     if not args.get("key") or not args.get("value"):
-        print("Please provide a key and value for the .env file")
+        print("Please provide a key and value for the env file")
         return False
-    env_file_path = Path(".env")
+    # Write to "env" to match what the agents load via load_dotenv("env").
+    env_file_path = Path("env")
     if not env_file_path.exists():
-        print("Create .env file...")
+        print("Create env file...")
         env_file_path.touch(mode=0o600, exist_ok=False)
     set_key(dotenv_path=env_file_path, key_to_set=args["key"], value_to_set=args["value"])
     return True
