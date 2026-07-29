@@ -19,12 +19,16 @@ npm install
 
 ### Configuration
 
-Create a `.env` file in this directory:
+Create a `.env` file in this directory. From the repository root, run the
+interactive configurator:
 
 ```bash
-chmod +x ./setup-env.sh
-./setup-env.sh
+python configure.py --frontend
 ```
+
+It prompts for the AWS region, Cognito user pool / client / domain, and the
+orchestrator runtime ARN, then writes `frontend/.env`. Alternatively, copy the
+template and edit by hand: `cp .env.example .env`.
 
 ### Running Locally
 

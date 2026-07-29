@@ -82,17 +82,28 @@ the architecture, not a medical device.
 
 This project reads runtime configuration from an `env` file (loaded via
 `python-dotenv`) and the frontend reads from `frontend/.env`. Neither file is
-committed. Copy the provided templates and fill in your own account-specific
-values:
+committed. Run the interactive configurator, which prompts for each value and
+writes both files:
+
+```bash
+python configure.py              # configure backend (env) and frontend (.env)
+python configure.py --backend    # only ./env
+python configure.py --frontend   # only ./frontend/.env
+```
+
+It offers any existing value as the default, so re-running only changes what
+you retype, and it masks the Cognito password. You supply your Cognito app
+client, user pool, and test-user credentials; the AgentCore runtime ARNs and
+Memory ID can be left blank — `deploy.py` fills them into `env` as it creates
+the resources. The browser automation agent additionally expects a
+`NOVA_ACT_API_KEY` environment variable.
+
+Prefer to edit by hand? Copy the templates instead:
 
 ```bash
 cp env.example env
 cp frontend/.env.example frontend/.env
 ```
-
-Then edit `env` and `frontend/.env` to point at your own AWS account ID, Cognito
-user pool / client, and AgentCore runtime ARNs. The browser automation agent
-additionally expects a `NOVA_ACT_API_KEY` environment variable.
 
 **Do not commit real credentials, API keys, or account-specific ARNs.**
 
@@ -131,10 +142,12 @@ see `agents/model-inference-agent/README.md`.
 
 ### 3. Start the frontend
 
+Make sure `frontend/.env` is configured (see [Configuration](#configuration) —
+`python configure.py --frontend`), then:
+
 ```bash
 cd frontend
 npm install
-./setup-env.sh   # writes frontend/.env
 npm run dev
 ```
 
