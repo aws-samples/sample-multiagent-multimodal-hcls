@@ -1,0 +1,39 @@
+# Clinical Decision Support Frontend
+
+## Overview
+
+This is a single-page application that provides a chat interface for interacting with Clinical Decision Support. The app handles OAuth authentication via AWS Cognito, streams responses from the agent in real-time, and displays the complete agentic workflow including tool invocations and their results.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18 or higher, use [documentation](https://nodejs.org/en/download).
+
+### Installation
+
+```bash
+cd frontend
+npm install
+```
+
+### Configuration
+
+Create a `.env` file in this directory. From the repository root, run the
+interactive configurator:
+
+```bash
+python configure.py --frontend
+```
+
+It prompts for the AWS region, Cognito user pool / client / domain, and the
+orchestrator runtime ARN, then writes `frontend/.env`. Alternatively, copy the
+template and edit by hand: `cp .env.example .env`.
+
+### Running Locally
+
+```bash
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`

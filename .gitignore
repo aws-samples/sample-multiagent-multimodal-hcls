@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.env
+env
+*.env
+
+# Node / frontend
+node_modules/
+frontend/dist/
+frontend/.env
+
+# Amplify (deployment-specific, do not commit)
+frontend/amplify/team-provider-info.json
+frontend/amplify/#current-cloud-backend/
+frontend/amplify/backend/amplify-meta.json
+aws-exports.js
+
+# Secrets / local config
+*.pem
+*.key
+.DS_Store
+
+# Keep example templates
+!env.example
+!frontend/.env.example

@@ -1,0 +1,10 @@
+bedrock-agentcore
+strands-agents
+strands-agents[a2a]
+boto3
+botocore
+pandas
+numpy
+httpx[http2]
+fastapi
+uvicorn

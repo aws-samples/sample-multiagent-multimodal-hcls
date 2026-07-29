@@ -1,0 +1,7 @@
+# Test-only dependencies for the Model Inference Agent.
+# Kept separate from requirements.txt so the deployed container image stays
+# lean. Install with: pip install -r requirements-test.txt
+pytest>=9.0
+pytest-timeout>=2.3  # enforces Req 8.15 — full PBT suite under 5 minutes
+hypothesis>=6.100
+moto>=5.1

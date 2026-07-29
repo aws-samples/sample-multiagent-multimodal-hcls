@@ -1,0 +1,11 @@
+
+> customer-support-frontend@1.0.0 dev
+> vite --port 5173
+
+
+  VITE v7.1.12  ready in 415 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://169.255.255.2:5173/
+  ➜  Network: http://169.255.254.3:5173/
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
