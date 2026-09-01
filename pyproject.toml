@@ -16,5 +16,5 @@ dependencies = [
     "rich>=14.1.0",
     "uvicorn>=0.35.0",
     "a2a-sdk==0.3.8",
-    "pip>=25.3",
+    "pip>=26.2",
 ]
