@@ -16,7 +16,7 @@ region = session.region_name
 client = boto3.client("healthlake", region_name=region)
 
 @mcp.tool()
-def list_datastores(datastore_name: str=None) -> List[TextContent]:
+def list_datastores(datastore_name: Optional[str]=None) -> List[TextContent]:
     """
     List all FHIR datastores in the current AWS account and region.
     
